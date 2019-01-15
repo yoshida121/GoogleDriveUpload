@@ -1,0 +1,13 @@
+client_config_backend: settings
+client_config:
+  client_id: <クライアントID>
+  client_secret: <クライアントシークレット>
+
+save_credentials: True  # 認証情報の保持するかどうか
+save_credentials_backend: file  # 認証情報をどの形式で保存するか
+save_credentials_file: credentials.json  # 認証情報を保存するファイル名
+
+get_refresh_token: True
+
+oauth_scope:
+  - https://www.googleapis.com/auth/drive  # 全アクセス権の付与

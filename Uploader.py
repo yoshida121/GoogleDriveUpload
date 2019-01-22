@@ -55,11 +55,13 @@ class GoogleDriveUpload():
             print_data : アップロードしたファイルのファイル名とIDを取得する
         """
 
-        if ".csv" in file_name:  
+        if file_name.endswith('.csv'):  
             # 自身の環境に合わせてmimeTypeを増やしてください. 下記のURLにMIMEの一覧あり
             # http://www.geocities.co.jp/Hollywood/9752/mime.html
             # https://developers.google.com/drive/api/v3/mime-types
             mimeType = "text/csv"
+        elif file_name.endswith('.ipynb'):
+            mimeType = 'application/vnd.google.colaboratory'
         elif fold_upload:
             mimeType = "application/vnd.google-apps.folder"
         else:
